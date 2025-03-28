@@ -13,6 +13,7 @@ import openfl.display.Bitmap;
 import openfl.display.Sprite;
 import openfl.events.Event;
 import openfl.Lib;
+import psychlua.HScript; 
 
 enum abstract PrintType(String) to String {
     var NONE = "";
