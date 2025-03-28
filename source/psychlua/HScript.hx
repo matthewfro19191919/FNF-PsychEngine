@@ -17,6 +17,12 @@ import crowplexus.hscript.Printer;
 
 import haxe.ValueException;
 
+
+enum abstract HscriptFunctionCallback(Bool) {
+	var CONTINUE_FUNCTION = true;
+	var STOP_FUNCTION = false;
+}
+
 typedef HScriptInfos = {
 	> haxe.PosInfos,
 	var ?funcName:String;
@@ -86,6 +92,14 @@ class HScript extends Iris
 		try {
 			return call(method, args);
 		}
+		catch(e) {
+			errorPrint(e);
+			return CONTINUE_FUNCTION;
+		}
+	}
+
+	inline public function errorPrint(error:Any) {
+		ModdingUtil.errorPrint('${getTraceID()} / ${Std.string(error).replace("hscript:", "")}');
 	}
 
 	public var origin:String;
