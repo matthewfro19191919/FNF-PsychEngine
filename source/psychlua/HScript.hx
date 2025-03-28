@@ -38,6 +38,8 @@ class HScript extends Iris
 	public var modFolder:String;
 	public var returnValue:Dynamic;
 
+	public var scriptID:String = '';
+
 	#if LUA_ALLOWED
 	public var parentLua:FunkinLua;
 	public static function initHaxeModule(parent:FunkinLua)
@@ -100,6 +102,10 @@ class HScript extends Iris
 
 	inline public function errorPrint(error:Any) {
 		errorPrint('${getTraceID()} / ${Std.string(error).replace("hscript:", "")}');
+	}
+
+	inline function getTraceID() {
+		return scriptID.replace("mods/","");
 	}
 
 	public var origin:String;
