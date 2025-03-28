@@ -3350,9 +3350,8 @@ class PlayState extends MusicBeatState
 	}
 	#end
 
-
-	inline function addCharScript(char:Character, name:String) {
-		var script:HScript = cast ('characters/' + name + '.hx');
+	inline function addCharScript(char:Character) {
+		final script = ModdingUtil.addScript(Paths.script('characters/' + char.curCharacter), '_charScript_' + char.type);
 		if (script != null) {
 			char.script = script;
 			script.set('ScriptChar', char);
