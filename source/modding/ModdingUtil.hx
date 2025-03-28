@@ -1,5 +1,7 @@
 package modding;
 
+import psychlua.HScript;
+
 typedef ModFolder = {
     var title:String;
     var description:String;
