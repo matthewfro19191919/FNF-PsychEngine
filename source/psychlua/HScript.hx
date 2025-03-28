@@ -99,7 +99,7 @@ class HScript extends Iris
 	}
 
 	inline public function errorPrint(error:Any) {
-		ModdingUtil.errorPrint('${getTraceID()} / ${Std.string(error).replace("hscript:", "")}');
+		errorPrint('${getTraceID()} / ${Std.string(error).replace("hscript:", "")}');
 	}
 
 	public var origin:String;
