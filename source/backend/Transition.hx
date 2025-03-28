@@ -5,6 +5,7 @@ import openfl.display.Bitmap;
 import openfl.display.Sprite;
 import openfl.events.Event as OpenFlEvent;
 import psychlua.HScript;
+import flixel.system.FlxAssets.FlxGraphicAsset;
 
 class ResizableSprite extends Sprite {
     public function new() {
