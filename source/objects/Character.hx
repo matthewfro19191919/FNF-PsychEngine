@@ -74,6 +74,9 @@ class Character extends FlxSprite
 	public var hasMissAnimations:Bool = false;
 	public var vocalsFile:String = '';
 
+	//Extra
+	public var script:FunkScript = null;
+
 	//Used on Character Editor
 	public var imageFile:String = '';
 	public var jsonScale:Float = 1;
@@ -100,6 +103,10 @@ class Character extends FlxSprite
 			case 'pico-blazin', 'darnell-blazin':
 				skipDance = true;
 		}
+	}
+
+	inline public function callScript(field:String, ?values:Array<Dynamic>):Void {
+		if (script != null) script.call(field, values);
 	}
 
 	public function changeCharacter(character:String)
