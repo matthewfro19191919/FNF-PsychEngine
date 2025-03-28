@@ -1,4 +1,4 @@
-package funkin;
+package backend;
 
 import openfl.text.TextFieldType;
 import openfl.ui.Mouse;
@@ -157,10 +157,10 @@ class ScriptConsole extends ResizableSprite {
         
         addChild(input);*/
 
-        script = new FunkScript("", "::global_script::");
+        script = new HScript("", "::global_script::");
 	}
 
-    public static var script(default, null):FunkScript;
+    public static var script(default, null):HScript;
     
     public static function runCode(code:String = "") {
         code = code.trim();
