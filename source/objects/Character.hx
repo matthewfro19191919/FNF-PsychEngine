@@ -12,6 +12,8 @@ import haxe.Json;
 import backend.Song;
 import states.stages.objects.TankmenBG;
 
+import psychlua.HScript;
+
 typedef CharacterFile = {
 	var animations:Array<AnimArray>;
 	var image:String;
@@ -75,7 +77,7 @@ class Character extends FlxSprite
 	public var vocalsFile:String = '';
 
 	//Extra
-	public var script:FunkScript = null;
+	public var script:HScript = null;
 
 	//Used on Character Editor
 	public var imageFile:String = '';
