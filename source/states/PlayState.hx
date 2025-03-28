@@ -55,8 +55,6 @@ import crowplexus.hscript.Expr.Error as IrisError;
 import crowplexus.hscript.Printer;
 #end
 
-import modding.ModdingUtil;
-
 /**
  * This is where all the Gameplay stuff happens and is managed
  *
