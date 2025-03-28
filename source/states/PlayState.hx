@@ -55,6 +55,8 @@ import crowplexus.hscript.Expr.Error as IrisError;
 import crowplexus.hscript.Printer;
 #end
 
+import modding.ModdingUtil;
+
 /**
  * This is where all the Gameplay stuff happens and is managed
  *
@@ -3350,9 +3352,8 @@ class PlayState extends MusicBeatState
 	}
 	#end
 
-
-	inline function addCharScript(char:Character, name:String) {
-		var script:HScript = cast ('characters/' + name + '.hx');
+	inline function addCharScript(char:Character) {
+		final script = ModdingUtil.addScript(Paths.script('characters/' + char.curCharacter), '_charScript_' + char.type);
 		if (script != null) {
 			char.script = script;
 			script.set('ScriptChar', char);
