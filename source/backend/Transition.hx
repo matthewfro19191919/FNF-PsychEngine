@@ -1,9 +1,10 @@
-package funkin;
+package backend;
 
 import openfl.display.BitmapData;
 import openfl.display.Bitmap;
 import openfl.display.Sprite;
 import openfl.events.Event as OpenFlEvent;
+import psychlua.HScript;
 
 class ResizableSprite extends Sprite {
     public function new() {
